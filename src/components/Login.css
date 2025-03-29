@@ -1,0 +1,208 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  background-color: white;
+}
+
+.left-section {
+  flex: 1;
+  background-color: #fce7f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.left-content {
+  text-align: center;
+  max-width: 600px;
+  z-index: 1;
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #db2777;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.banner-description {
+  font-size: 1.5rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: white;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 28rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  border: 1px solid #fce7f3;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.card-subtitle {
+  margin-top: 0.5rem;
+  color: #6b7280;
+}
+
+.error-message {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.google-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background-color: #db2777;
+  transition: background-color 0.2s;
+}
+
+.google-button:hover {
+  background-color: #be185d;
+}
+
+.google-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #fce7f3;
+}
+
+.google-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.google-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.divider {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.divider-line {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #d1d5db;
+}
+
+.divider-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  background-color: white;
+  padding: 0 0.5rem;
+}
+
+.create-account-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #fce7f3;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #db2777;
+  background-color: white;
+  transition: background-color 0.2s;
+}
+
+.create-account-button:hover {
+  background-color: #fdf2f8;
+}
+
+.create-account-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #fce7f3;
+}
+
+.terms-text {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.terms-link {
+  font-weight: 500;
+  color: #db2777;
+}
+
+.terms-link:hover {
+  color: #be185d;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .left-section {
+    padding: 4rem 2rem;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+  }
+
+  .banner-description {
+    font-size: 1.25rem;
+  }
+
+  .right-section {
+    padding: 2rem;
+  }
+} 

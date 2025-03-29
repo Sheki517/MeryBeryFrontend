@@ -1,52 +1,30 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material';
-import CssBaseline from '@mui/material/CssBaseline';
-import Dashboard from './components/Dashboard';
-import FarmList from './components/FarmList';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#FF69B4', // Hot pink
-    },
-    secondary: {
-      main: '#FFB6C1', // Light pink
-    },
-    background: {
-      default: '#FFF0F5', // Lavender blush
-      paper: '#FFFFFF', // White
-    },
-  },
-  components: {
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          backgroundImage: 'none',
-          backgroundColor: '#FFFFFF',
-        },
-      },
-    },
-  },
-});
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import Login from './components/Login';
+import ProtectedRoute from './components/ProtectedRoute';
+import './App.css';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <AuthProvider>
       <Router>
-        <div style={{ 
-          minHeight: '100vh', 
-          background: 'linear-gradient(135deg, #FFF0F5 0%, #FFFFFF 100%)',
-          padding: '20px 0'
-        }}>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/farms/:flowerType" element={<FarmList />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <div className="p-4">
+                  <h1 className="text-2xl font-bold">Dashboard</h1>
+                  {/* Add your dashboard content here */}
+                </div>
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/" element={<Navigate to="/login" />} />
+        </Routes>
       </Router>
-    </ThemeProvider>
+    </AuthProvider>
   );
 }
 
