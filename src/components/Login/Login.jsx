@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { auth, googleProvider } from '../firebase.config';
+import { auth, googleProvider } from '../../firebase.config';
 import { signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
